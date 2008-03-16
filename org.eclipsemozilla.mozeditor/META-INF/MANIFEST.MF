@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Mozeditor Plug-in
+Bundle-SymbolicName: org.eclipsemozilla.mozeditor;singleton:=true
+Bundle-Version: 0.1
+Bundle-Activator: org.eclipsemozilla.mozeditor.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.mozilla.xpcom,
+ org.eclipse.atf.mozilla.swt.browser
+Eclipse-LazyStart: true
+Export-Package: org.eclipsemozilla.mozeditor,
+ org.eclipsemozilla.mozeditor.ui.browser
