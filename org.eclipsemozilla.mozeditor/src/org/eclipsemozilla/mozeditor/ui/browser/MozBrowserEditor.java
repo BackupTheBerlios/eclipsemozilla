@@ -13,7 +13,6 @@
  *******************************************************************************/
 package org.eclipsemozilla.mozeditor.ui.browser;
 
-import org.eclipse.atf.mozilla.swt.browser.MozillaHelper;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.ListenerList;
 import org.eclipse.jface.action.Action;
@@ -31,6 +30,7 @@ import org.eclipse.ui.part.EditorPart;
 import org.eclipsemozilla.mozeditor.Activator;
 import org.eclipsemozilla.mozeditor.ui.browser.toolbar.NavigationBar;
 import org.eclipsemozilla.mozeditor.ui.browser.toolbar.StatusBar;
+import org.eclipsemozilla.swt.browser.MozillaHelper;
 import org.mozilla.interfaces.nsIDOMDocument;
 import org.mozilla.interfaces.nsIDOMKeyEvent;
 import org.mozilla.xpcom.XPCOMException;
