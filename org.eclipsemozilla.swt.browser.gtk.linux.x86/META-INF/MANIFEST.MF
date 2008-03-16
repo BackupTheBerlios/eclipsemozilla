@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-Vendor: %providerName
+Bundle-SymbolicName: org.eclipsemozilla.swt.browser.gtk.linux.x86;singleton:=true
+Bundle-Version: 0.2.3.qualifier
+Bundle-Localization: plugin
+Require-Bundle: org.eclipsemozilla.swt.browser,
+ org.mozilla.xulrunner.gtk.linux.x86
+Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=linux)  (osgi.arch=x86))

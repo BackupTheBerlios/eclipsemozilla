@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-SymbolicName: org.eclipsemozilla.swt.browser;singleton:=true
+Bundle-Version: 0.2.3.qualifier
+Bundle-Vendor: %Bundle-Vendor
+Bundle-Activator: org.eclipsemozilla.swt.browser.SwtBrowserPlugin
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime,
+ org.mozilla.xpcom,
+ org.eclipse.swt;bundle-version="[3.3.0,4.0.0)",
+ org.eclipse.ui
+Export-Package: org.eclipsemozilla.swt.browser
+Bundle-RequiredExecutionEnvironment: J2SE-1.4
+Eclipse-LazyStart: true
+
