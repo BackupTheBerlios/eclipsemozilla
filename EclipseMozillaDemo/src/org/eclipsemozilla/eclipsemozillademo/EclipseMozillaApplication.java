@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2008 EclipseMozilla.org.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Thomas Derflinger - tderflinger@gmail.com - initial API and implementation
+ *******************************************************************************/
 package org.eclipsemozilla.eclipsemozillademo;
 
 import org.eclipse.equinox.app.IApplication;
@@ -12,16 +22,19 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
  * This class controls all aspects of the application's execution
  */
 public class EclipseMozillaApplication implements IApplication {
-	
+
 	public final static String ID = "EclipseMozillaDemo";
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.equinox.app.IApplication#start(org.eclipse.equinox.app.IApplicationContext)
 	 */
 	public Object start(IApplicationContext context) {
 		Display display = PlatformUI.createDisplay();
 		try {
-			int returnCode = PlatformUI.createAndRunWorkbench(display, new ApplicationWorkbenchAdvisor());
+			int returnCode = PlatformUI.createAndRunWorkbench(display,
+					new ApplicationWorkbenchAdvisor());
 			if (returnCode == PlatformUI.RETURN_RESTART) {
 				return IApplication.EXIT_RESTART;
 			}
@@ -31,7 +44,9 @@ public class EclipseMozillaApplication implements IApplication {
 		}
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.equinox.app.IApplication#stop()
 	 */
 	public void stop() {
@@ -46,16 +61,18 @@ public class EclipseMozillaApplication implements IApplication {
 			}
 		});
 	}
-	
+
 	/**
-	 * Returns an image descriptor for the image file at the given
-	 * plug-in relative path.
-	 *
-	 * @param path the path
+	 * Returns an image descriptor for the image file at the given plug-in
+	 * relative path.
+	 * 
+	 * @param path
+	 *            the path
 	 * @return the image descriptor
 	 */
 	public static ImageDescriptor getImageDescriptor(String path) {
-		return AbstractUIPlugin.imageDescriptorFromPlugin("EclipseMozillaDemo", path);
+		return AbstractUIPlugin.imageDescriptorFromPlugin("EclipseMozillaDemo",
+				path);
 	}
 
 }

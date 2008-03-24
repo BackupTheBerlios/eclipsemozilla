@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2008 EclipseMozilla.org.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Thomas Derflinger - tderflinger@gmail.com - initial API and implementation
+ *******************************************************************************/
 package org.eclipsemozilla.eclipsemozillademo;
 
 import org.eclipse.core.runtime.IStatus;
@@ -17,48 +27,47 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 
 	protected static final String ERROR_MSG = "Error opening Mozilla Browser!";
 
-	
-	protected void showError( IStatus status ){
-		try{
-			ErrorDialog.openError(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), null, ERROR_MSG, status );
-		}
-		catch( Exception e ){
-			//in case of an NPE getting the Active Workbench Window
+	protected void showError(IStatus status) {
+		try {
+			ErrorDialog.openError(PlatformUI.getWorkbench()
+					.getActiveWorkbenchWindow().getShell(), null, ERROR_MSG,
+					status);
+		} catch (Exception e) {
+			// in case of an NPE getting the Active Workbench Window
 		}
 	}
 
-	
 	@Override
 	public void postStartup() {
-		
-		IWorkbenchWindow activeWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();;
+
+		IWorkbenchWindow activeWindow = PlatformUI.getWorkbench()
+				.getActiveWorkbenchWindow();
+		;
 
 		if (activeWindow == null) {
-			showError(
-					new Status(
-							IStatus.ERROR,
-							EclipseMozillaApplication.ID,
-							IStatus.ERROR,
-							"Error opening Mozilla Browser... failed to retrieve active workbench window!",
-							null));
+			showError(new Status(
+					IStatus.ERROR,
+					EclipseMozillaApplication.ID,
+					IStatus.ERROR,
+					"Error opening Mozilla Browser... failed to retrieve active workbench window!",
+					null));
 		}
-			
+
 		IWorkbenchPage activePage = activeWindow.getActivePage();
 		if (activePage == null) {
-			showError(
-					new Status(
-							IStatus.ERROR,
-							EclipseMozillaApplication.ID,
-							IStatus.ERROR,
-							"Error opening Mozilla Browser... could not retrieve active page!",
-							null));
+			showError(new Status(
+					IStatus.ERROR,
+					EclipseMozillaApplication.ID,
+					IStatus.ERROR,
+					"Error opening Mozilla Browser... could not retrieve active page!",
+					null));
 		}
 
 		MozBrowserEditorInput editorInput = new MozBrowserEditorInput(
 				"http://www.eclipsemozilla.org");
 
 		try {
-			activePage.openEditor(editorInput, MozBrowserEditor.ID );
+			activePage.openEditor(editorInput, MozBrowserEditor.ID);
 		} catch (PartInitException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
