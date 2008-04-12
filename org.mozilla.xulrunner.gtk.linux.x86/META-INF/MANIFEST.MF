@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-SymbolicName: org.mozilla.xulrunner.gtk.linux.x86;singleton:=true
+Bundle-Version: 1.8.1.3-20080312
+Bundle-Vendor: %Bundle-Vendor
+Bundle-localization: plugin
+Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=linux)  (osgi.arch=x86))
